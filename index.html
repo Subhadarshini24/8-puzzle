@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="manifest" href="manifest.json">
+    <title>8-Puzzle Play & Solve</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-layout">
+        <header class="app-header">
+            <h1 class="title">8-Puzzle AI Solver & Play</h1>
+        </header>
+
+        <div class="dashboard-grid">
+            
+            <!-- Center Stage: The Live Game -->
+            <section class="live-stage panel-card">
+                <div class="stage-header">
+                    <h2>Live Playable Board</h2>
+                    <div class="stats-mini">
+                        <div class="stat-pill">Moves: <b id="stat-moves">0</b></div>
+                        <div class="stat-pill">Cost f(n): <b id="stat-cost">0</b></div>
+                        <div class="stat-pill">Explored: <b id="stat-explored">0</b></div>
+                    </div>
+                </div>
+                
+                <div class="board-wrapper-large">
+                    <div id="game-board" class="game-board playable">
+                        <!-- Tiles injected by JS -->
+                    </div>
+                </div>
+                <div id="message-box" class="message-box hidden"></div>
+            </section>
+
+            <!-- Right Side: Goal, Controls, Path -->
+            <section class="sidebar">
+                
+                <!-- Goal Card -->
+                <div class="goal-card panel-card">
+                    <div class="sidebar-header">
+                        <h3>Goal State</h3>
+                        <button id="btn-randomize-goal" class="btn btn-outline btn-small">Shuffle Goal</button>
+                    </div>
+                    <div class="board-wrapper-small">
+                        <div id="goal-board" class="game-board static small-board">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls Card -->
+                <div class="controls-card panel-card">
+                    <button id="btn-randomize" class="btn btn-primary btn-block mb-3">Shuffle & Play</button>
+                    
+                    <div class="action-grid mb-3">
+                        <button id="btn-solve" class="btn btn-secondary" style="grid-column: span 2;">Auto-Solve via AI</button>
+                        <button id="btn-auto" class="btn btn-outline" disabled>Auto Play</button>
+                        <button id="btn-next" class="btn btn-outline" disabled>Next Step</button>
+                    </div>
+                    
+                    <div class="custom-input-group">
+                        <input type="text" id="input-state" value="8,7,6,5,4,3,2,1,0" placeholder="1,2,3,4,5,6,7,8,0">
+                        <button id="btn-set-state" class="btn btn-small">Set</button>
+                        <button id="btn-reset" class="btn btn-small btn-outline">Reset</button>
+                    </div>
+                </div>
+
+                <!-- Path Card -->
+                <div class="path-card panel-card">
+                    <h3>Solution Path Activity</h3>
+                    <div class="path-scroll" id="path-list">
+                        <div class="empty-path">Live moves will be recorded here.<br><br>Play manually or use the AI Solver!</div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
