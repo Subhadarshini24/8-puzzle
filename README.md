@@ -46,4 +46,26 @@ How It Works:
 --> Select the state with the lowest f(n) value
 --> Continue until the goal state is reached
 --> Display the full solution path
-                                     
+# 🧩 8 Puzzle Game
+
+## 📂 Project Structure
+
+8-puzzle/
+│── www/ # Main web app files
+│ ├── index.html # Entry point of the application
+│ ├── css/ # Styling files
+│ ├── js/ # Game logic
+│
+│── android/ # Android build files (optional)
+│── package.json # Project dependencies
+│── README.md # Project documentation
+
+
+---
+
+## ▶️ How to Run the Project
+
+### Method 1: Directly in Browser
+1. Open the project folder
+2. Go to the `www` folder
+3. Double click on `index.html`
